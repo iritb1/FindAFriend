@@ -1,0 +1,21 @@
+# Build context = project root (per backend/docker-compose.yml).
+# Skip anything that should NOT end up in the image.
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node — the frontend dist is rebuilt fresh in stage 1.
+frontend/node_modules/
+frontend/dist/
+
+# Local secrets + dev state
+.env
+backend/.env
+**/.env.local
+.git/
+.idea/
+.vscode/
+.DS_Store
